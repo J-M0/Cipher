@@ -46,9 +46,16 @@ public class SubstitutionCipher
         
         for(int i = 0; i < sPlainText.length(); i++)
         {
-            ch = sKey.charAt(sKey.indexOf(sPlainText.charAt(i)));
+            if(('A' <= sPlainText.charAt(i)) && (sPlainText.charAt(i) <= 'Z'))
+            {
+                ch = sKey.charAt(sKey.indexOf(sPlainText.charAt(i)));
+                sb.append(ch);
+            }
+            else
+            {
+                sb.append(sPlainText.charAt(i));
+            }
             
-            sb.append(ch);
         }
         
         sEncodedText = sb.toString();
@@ -64,9 +71,16 @@ public class SubstitutionCipher
         
         for(int i = 0; i < sEncodedText.length(); i++)
         {
-            ch = sAlphabet.charAt(sAlphabet.indexOf(sEncodedText.charAt(i)));
+            if(('A' <= sEncodedText.charAt(i)) && (sEncodedText.charAt(i) <= 'Z'))
+            {
+                ch = sAlphabet.charAt(sAlphabet.indexOf(sEncodedText.charAt(i)));
+                sb.append(ch);
+            }
+            else
+            {
+                sb.append(sEncodedText.charAt(i));
+            }
             
-            sb.append(ch);
         }
         
         sPlainText = sb.toString();
