@@ -28,7 +28,7 @@ public class SubstitutionCipher
     {
         if(pKey.length() == 26)
         {
-            sKey = pKey;
+            sKey = pKey.toUpperCase();
         }
         else
         {
