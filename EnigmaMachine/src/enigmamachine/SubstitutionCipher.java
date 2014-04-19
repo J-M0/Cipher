@@ -7,16 +7,34 @@ package enigmamachine;
 public class SubstitutionCipher
 {
     String sKey;
-    String sAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    final String sAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
     public SubstitutionCipher()
     {
-        sKey = "FGHIJKLMNOPQRSTUVWXYZABCDE";
+        setKey("FGHIJKLMNOPQRSTUVWXYZABCDE");
     }
     
     public SubstitutionCipher(String pKey)
     {
-        sKey = pKey;
+        setKey(pKey);
+    }
+    
+    public String getKey()
+    {
+        return sKey;
+    }
+    
+    public void setKey(String pKey)
+    {
+        if(pKey.length() == 26)
+        {
+            sKey = pKey;
+        }
+        else
+        {
+            //I'm not sure what to do here.
+            //I should figure out some way to output an error message.
+        }
     }
     
     public String encode(String pPlainText)
