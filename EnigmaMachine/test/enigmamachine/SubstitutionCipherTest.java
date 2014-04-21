@@ -55,6 +55,8 @@ public class SubstitutionCipherTest
         
         instance.setKey("bcdefghijklmnopqrstuvwxyza");
         
+        assertEquals("BCDEFGHIJKLMNOPQRSTUVWXYZA", instance.getKey());
+        
         //ABCDEFGHIJKLMNOPQRSTUVWXYZ
         //BCDEFGHIJKLMNOPQRSTUVWXYZA
         assertEquals("IFMMP XPSME", instance.encode("Hello World"));
@@ -78,6 +80,8 @@ public class SubstitutionCipherTest
                 instance.decode("Stb nx ymj ynrj ktw fqq ltti rjs yt htrj yt ymj fni tk ymjnw htzsywd."));
         
         instance.setKey("bcdefghijklmnopqrstuvwxyza");
+        
+        assertEquals("BCDEFGHIJKLMNOPQRSTUVWXYZA", instance.getKey());
         
         //ABCDEFGHIJKLMNOPQRSTUVWXYZ
         //BCDEFGHIJKLMNOPQRSTUVWXYZA
