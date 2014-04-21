@@ -7,7 +7,7 @@ package enigmamachine;
 public class SubstitutionCipher
 {
     String sKey;
-    final String sAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
     public SubstitutionCipher()
     {
@@ -39,61 +39,51 @@ public class SubstitutionCipher
     
     public String encode(String pPlainText)
     {
-        //String sEncodedText;
         String sPlainText = pPlainText.toUpperCase();
         StringBuilder sbEncodedText = new StringBuilder();
-        char ch;
         
         for(int i = 0; i < sPlainText.length(); i++)
         {
             if(Character.isLetter(sPlainText.charAt(i)))
             {
-                ch = encodeChar(sPlainText.charAt(i));
-                sbEncodedText.append(ch);
+                sbEncodedText.append(sKey.charAt(ALPHABET.indexOf(sPlainText.charAt(i))));
             }
             else
             {
                 sbEncodedText.append(sPlainText.charAt(i));
             }
-            
         }
         
-        //sEncodedText = sb.toString();
         return sbEncodedText.toString();
     }
     
-    private char encodeChar(char ch)
+    /*private char encodeChar(char ch)
     {
-        return sKey.charAt(sAlphabet.indexOf(ch));
-    }
+        return sKey.charAt(ALPHABET.indexOf(ch));
+    }*/
     
     public String decode(String pEncodedText)
     {
-        //String sPlainText;
         String sEncodedText = pEncodedText.toUpperCase();
         StringBuilder sbPlainText = new StringBuilder();
-        char ch;
         
         for(int i = 0; i < sEncodedText.length(); i++)
         {
             if(Character.isLetter(sEncodedText.charAt(i)))
             {
-                ch = decodeChar(sEncodedText.charAt(i));
-                sbPlainText.append(ch);
+                sbPlainText.append(ALPHABET.charAt(sKey.indexOf(sEncodedText.charAt(i))));
             }
             else
             {
                 sbPlainText.append(sEncodedText.charAt(i));
             }
-            
         }
         
-        //sPlainText = sb.toString();
         return sbPlainText.toString();
     }
     
-    private char decodeChar(char ch)
+    /*private char decodeChar(char ch)
     {
-        return sAlphabet.charAt(sKey.indexOf(ch));
-    }
+        return ALPHABET.charAt(sKey.indexOf(ch));
+    }*/
 }
