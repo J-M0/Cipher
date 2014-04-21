@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author James
+ * @author James Morris
  */
 public class SubstitutionCipherTest
 {
