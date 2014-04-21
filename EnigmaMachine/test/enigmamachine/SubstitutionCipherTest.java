@@ -44,14 +44,22 @@ public class SubstitutionCipherTest
     @Test
     public void testEncode()
     {
-        System.out.println("encode");
-        String s = "";
-        SubstitutionCipher instance = null;
-        String expResult = "";
-        String result = instance.encode(s);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Test of SubstituionCihper.encode()");
+        SubstitutionCipher instance = new SubstitutionCipher();
+        
+        //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        //FGHIJKLMNOPQRSTUVWXYZABCDE
+        assertEquals("MJQQT BTWQI", instance.encode("Hello World"));
+        assertEquals("STB NX YMJ YNRJ KTW FQQ LTTI RJS YT HTRJ YT YMJ FNI TK YMJNW HTZSYWD.", 
+                instance.encode("Now is the time for all good men to come to the aid of their country."));
+        
+        instance.setKey("bcdefghijklmnopqrstuvwxyza");
+        
+        //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        //BCDEFGHIJKLMNOPQRSTUVWXYZA
+        assertEquals("IFMMP XPSME", instance.encode("Hello World"));
+        assertEquals("OPX JT UIF UJNF GPS BMM HPPE NFO UP DPNF UP UIF BJE PG UIFJS DPVOUSZ.", 
+                instance.encode("Now is the time for all good men to come to the aid of their country."));
     }
 
     /**
@@ -60,14 +68,21 @@ public class SubstitutionCipherTest
     @Test
     public void testDecode()
     {
-        System.out.println("decode");
-        String s = "";
-        SubstitutionCipher instance = null;
-        String expResult = "";
-        String result = instance.decode(s);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Test of SubstitutionCipher.decode()");
+        SubstitutionCipher instance = new SubstitutionCipher();
+        
+        //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        //FGHIJKLMNOPQRSTUVWXYZABCDE
+        assertEquals("HELLO WORLD", instance.decode("Mjqqt Btwqi"));
+        assertEquals("NOW IS THE TIME FOR ALL GOOD MEN TO COME TO THE AID OF THEIR COUNTRY.", 
+                instance.decode("Stb nx ymj ynrj ktw fqq ltti rjs yt htrj yt ymj fni tk ymjnw htzsywd."));
+        
+        instance.setKey("bcdefghijklmnopqrstuvwxyza");
+        
+        //ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        //BCDEFGHIJKLMNOPQRSTUVWXYZA
+        assertEquals("HELLO WORLD", instance.decode("Ifmmp Xpsme"));
+        assertEquals("NOW IS THE TIME FOR ALL GOOD MEN TO COME TO THE AID OF THEIR COUNTRY.", 
+                instance.decode("Opx jt uif ujnf gps bmm hppe nfo up dpnf up uif bje pg uifjs dpvousz."));
     }
-    
 }
