@@ -39,51 +39,61 @@ public class SubstitutionCipher
     
     public String encode(String pPlainText)
     {
-        String sEncodedText;
+        //String sEncodedText;
         String sPlainText = pPlainText.toUpperCase();
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sbEncodedText = new StringBuilder();
         char ch;
         
         for(int i = 0; i < sPlainText.length(); i++)
         {
-            if(('A' <= sPlainText.charAt(i)) && (sPlainText.charAt(i) <= 'Z'))
+            if(Character.isLetter(sPlainText.charAt(i)))
             {
-                ch = sKey.charAt(sKey.indexOf(sPlainText.charAt(i)));
-                sb.append(ch);
+                ch = encodeChar(sPlainText.charAt(i));
+                sbEncodedText.append(ch);
             }
             else
             {
-                sb.append(sPlainText.charAt(i));
+                sbEncodedText.append(sPlainText.charAt(i));
             }
             
         }
         
-        sEncodedText = sb.toString();
-        return sEncodedText;
+        //sEncodedText = sb.toString();
+        return sbEncodedText.toString();
+    }
+    
+    private char encodeChar(char ch)
+    {
+        return sKey.charAt(sAlphabet.indexOf(ch));
     }
     
     public String decode(String pEncodedText)
     {
-        String sPlainText;
+        //String sPlainText;
         String sEncodedText = pEncodedText.toUpperCase();
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sbPlainText = new StringBuilder();
         char ch;
         
         for(int i = 0; i < sEncodedText.length(); i++)
         {
-            if(('A' <= sEncodedText.charAt(i)) && (sEncodedText.charAt(i) <= 'Z'))
+            if(Character.isLetter(sEncodedText.charAt(i)))
             {
-                ch = sAlphabet.charAt(sAlphabet.indexOf(sEncodedText.charAt(i)));
-                sb.append(ch);
+                ch = decodeChar(sEncodedText.charAt(i));
+                sbPlainText.append(ch);
             }
             else
             {
-                sb.append(sEncodedText.charAt(i));
+                sbPlainText.append(sEncodedText.charAt(i));
             }
             
         }
         
-        sPlainText = sb.toString();
-        return sPlainText;
+        //sPlainText = sb.toString();
+        return sbPlainText.toString();
+    }
+    
+    private char decodeChar(char ch)
+    {
+        return sAlphabet.charAt(sKey.indexOf(ch));
     }
 }
