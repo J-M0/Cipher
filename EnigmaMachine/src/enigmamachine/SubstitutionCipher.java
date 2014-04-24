@@ -1,5 +1,7 @@
 package enigmamachine;
 
+import javax.swing.*;
+
 /**
  *
  * @author James Morris
@@ -13,17 +15,14 @@ public class SubstitutionCipher
     {
         setKey("FGHIJKLMNOPQRSTUVWXYZABCDE");
     }
-    
     public SubstitutionCipher(String pKey)
     {
         setKey(pKey);
     }
-    
     public String getKey()
     {
         return sKey;
     }
-    
     public void setKey(String pKey)
     {
         if(pKey.length() == 26)
@@ -32,11 +31,12 @@ public class SubstitutionCipher
         }
         else
         {
-            //I'm not sure what to do here.
-            //I should figure out some way to output an error message.
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f,
+            "There has been an error","Error",
+            JOptionPane.ERROR_MESSAGE);
         }
     }
-    
     public String encode(String pPlainText)
     {
         String sPlainText = pPlainText.toUpperCase();

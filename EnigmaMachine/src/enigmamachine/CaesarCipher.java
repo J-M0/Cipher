@@ -1,5 +1,4 @@
 package enigmamachine;
-
 /**
  *
  * @author James Morris
@@ -9,9 +8,8 @@ public class CaesarCipher
     final String KEY = "DEFGHIJKLMNOPQRSTUVWXYZABC";
     final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
-    public CaesarCipher()
+    public CaesarCipher() 
     {
-        
     }
     
     public String encode(String pPlainText)
@@ -33,7 +31,6 @@ public class CaesarCipher
         
         return sbEncodedText.toString();
     }
-    
     public String decode(String pEncodedText)
     {
         String sEncodedText = pEncodedText.toUpperCase();
@@ -50,7 +47,6 @@ public class CaesarCipher
                 sbPlainText.append(sEncodedText.charAt(i));
             }
         }
-        
         return sbPlainText.toString();
     }
 }
