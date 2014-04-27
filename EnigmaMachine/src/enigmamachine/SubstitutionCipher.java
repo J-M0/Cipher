@@ -13,7 +13,7 @@ public class SubstitutionCipher
     
     public SubstitutionCipher()
     {
-        setKey("FGHIJKLMNOPQRSTUVWXYZABCDE");
+        setKey("DEFGHIJKLMNOPQRSTUVWXYZABC");
     }
     public SubstitutionCipher(String pKey)
     {

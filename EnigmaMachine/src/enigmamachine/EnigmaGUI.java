@@ -7,6 +7,7 @@ public class EnigmaGUI extends Frame
 {
     SubstitutionCipher substitution = new SubstitutionCipher();
     CaesarCipher caesar = new CaesarCipher();
+    RotatingCipher rotating = new RotatingCipher();
     
     public EnigmaGUI() 
     {
@@ -231,10 +232,14 @@ public class EnigmaGUI extends Frame
 
     private void bEncryptRotatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEncryptRotatingActionPerformed
       //code to encrypt rotating ciphers
+        String encodedText = rotating.encode(tfInput.getText());
+        tfOutput.setText(encodedText);
     }//GEN-LAST:event_bEncryptRotatingActionPerformed
 
     private void bDecryptRotatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecryptRotatingActionPerformed
       //code to decrypt rotating ciphers
+        String decodedText = rotating.decode(tfInput.getText());
+        tfOutput.setText(decodedText);
     }//GEN-LAST:event_bDecryptRotatingActionPerformed
 
     private void bDecodeUnknownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecodeUnknownActionPerformed
