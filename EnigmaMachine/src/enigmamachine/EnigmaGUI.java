@@ -1,6 +1,12 @@
 package enigmamachine;
 import java.awt.Frame;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
+ * EnigmaGUI.java creates a GUI for the encryption to provide ease of access for
+ * the requirements.
+ * Built for CIS252's team project assignment
  * @author Kyle Jolicoeur
  */
 public class EnigmaGUI extends Frame
@@ -8,6 +14,7 @@ public class EnigmaGUI extends Frame
     SubstitutionCipher substitution = new SubstitutionCipher();
     CaesarCipher caesar = new CaesarCipher();
     RotatingCipher rotating = new RotatingCipher();
+    UnknownCipher unknown = new UnknownCipher();
     
     public EnigmaGUI() 
     {
@@ -243,7 +250,11 @@ public class EnigmaGUI extends Frame
     }//GEN-LAST:event_bDecryptRotatingActionPerformed
 
     private void bDecodeUnknownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecodeUnknownActionPerformed
-       //code to decode a file called unknown.txt
+        try {
+            unknown.decrypt();
+        } catch (IOException ex) {
+            Logger.getLogger(EnigmaGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bDecodeUnknownActionPerformed
 
     private void bExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExitActionPerformed
