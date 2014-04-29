@@ -33,7 +33,7 @@ public class SubstitutionCipher
         {
             JFrame f = new JFrame();
             JOptionPane.showMessageDialog(f,
-            "There has been an error","Error",
+            "The key must be 26 letters long","Error",
             JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -57,10 +57,10 @@ public class SubstitutionCipher
         return sbEncodedText.toString();
     }
     
-    /*private char encodeChar(char ch)
-    {
-        return sKey.charAt(ALPHABET.indexOf(ch));
-    }*/
+//    private char encodeChar(char ch)
+//    {
+//        return sKey.charAt(ALPHABET.indexOf(ch));
+//    }
     
     public String decode(String pEncodedText)
     {
@@ -82,8 +82,8 @@ public class SubstitutionCipher
         return sbPlainText.toString();
     }
     
-    /*private char decodeChar(char ch)
-    {
-        return ALPHABET.charAt(sKey.indexOf(ch));
-    }*/
+//    private char decodeChar(char ch)
+//    {
+//        return ALPHABET.charAt(sKey.indexOf(ch));
+//    }
 }
