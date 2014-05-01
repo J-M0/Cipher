@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package enigmamachine;
 
 /**
@@ -12,14 +6,18 @@ package enigmamachine;
  */
 public class SetKeyDialog extends javax.swing.JDialog
 {
-
+    //String sKey;
+    EnigmaGUI parent;
     /**
      * Creates new form SetKeyDialog
      */
-    public SetKeyDialog(EnigmaGUI parent, boolean modal)
+    public SetKeyDialog(EnigmaGUI pParent, boolean modal)
     {
-        super(parent, modal);
+        super(pParent, modal);
+        parent = pParent;
         initComponents();
+        //sKey = pKey;
+        setVisible(true);
     }
 
     /**
@@ -32,12 +30,14 @@ public class SetKeyDialog extends javax.swing.JDialog
     private void initComponents()
     {
 
-        jTextField1 = new javax.swing.JTextField();
+        TextFeild = new javax.swing.JTextField();
         bSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setModal(true);
 
-        jTextField1.setText("jTextField1");
+        TextFeild.setText(parent.substitution.getKey());
 
         bSubmit.setText("Submit");
         bSubmit.addActionListener(new java.awt.event.ActionListener()
@@ -53,22 +53,23 @@ public class SetKeyDialog extends javax.swing.JDialog
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bSubmit)
-                .addGap(161, 161, 161))
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bSubmit)
+                        .addGap(127, 127, 127))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(TextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(TextFeild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addComponent(bSubmit)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
 
         pack();
@@ -76,7 +77,8 @@ public class SetKeyDialog extends javax.swing.JDialog
 
     private void bSubmitActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bSubmitActionPerformed
     {//GEN-HEADEREND:event_bSubmitActionPerformed
-        
+        parent.substitution.setKey(TextFeild.getText());
+        dispose();
     }//GEN-LAST:event_bSubmitActionPerformed
 
     /**
@@ -123,7 +125,7 @@ public class SetKeyDialog extends javax.swing.JDialog
         {
             public void run()
             {
-                SetKeyDialog dialog = new SetKeyDialog(new javax.swing.JFrame(), true);
+                SetKeyDialog dialog = new SetKeyDialog(new EnigmaGUI(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter()
                 {
                     @Override
@@ -138,7 +140,7 @@ public class SetKeyDialog extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TextFeild;
     private javax.swing.JButton bSubmit;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
