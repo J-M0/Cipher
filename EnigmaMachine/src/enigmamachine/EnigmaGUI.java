@@ -23,7 +23,8 @@ public class EnigmaGUI extends Frame
 
     //code that creates the GUI
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jlabelEnterText = new javax.swing.JLabel();
@@ -41,14 +42,16 @@ public class EnigmaGUI extends Frame
         jLabel5 = new javax.swing.JLabel();
         bDecodeUnknown = new javax.swing.JButton();
         bExit = new javax.swing.JButton();
+        bSetKey = new javax.swing.JButton();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Lucida Console", 0, 12)); // NOI18N
-        setLocationRelativeTo(null);
         setName("Enigma Machine"); // NOI18N
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
+        addWindowListener(new java.awt.event.WindowAdapter()
+        {
+            public void windowClosing(java.awt.event.WindowEvent evt)
+            {
                 formWindowClosing(evt);
             }
         });
@@ -61,8 +64,10 @@ public class EnigmaGUI extends Frame
         jlabelOutput.setText("Output:");
 
         bEncryptCaesar.setText("Encrypt Text");
-        bEncryptCaesar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEncryptCaesar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEncryptCaesarActionPerformed(evt);
             }
         });
@@ -70,22 +75,28 @@ public class EnigmaGUI extends Frame
         jLabel3.setText("Caesar's Cipher:");
 
         bDecryptCaesar.setText("Decrypt Text");
-        bDecryptCaesar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecryptCaesar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecryptCaesarActionPerformed(evt);
             }
         });
 
         bEncryptSubstitution.setText("Encrypt Text");
-        bEncryptSubstitution.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEncryptSubstitution.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEncryptSubstitutionActionPerformed(evt);
             }
         });
 
         bDecryptSubstitution.setText("Decrypt Text");
-        bDecryptSubstitution.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecryptSubstitution.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecryptSubstitutionActionPerformed(evt);
             }
         });
@@ -93,15 +104,19 @@ public class EnigmaGUI extends Frame
         jLabel4.setText("Substitution Cipher:");
 
         bEncryptRotating.setText("Encrypt Text");
-        bEncryptRotating.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEncryptRotating.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEncryptRotatingActionPerformed(evt);
             }
         });
 
         bDecryptRotating.setText("Decrypt Text");
-        bDecryptRotating.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecryptRotating.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecryptRotatingActionPerformed(evt);
             }
         });
@@ -109,16 +124,29 @@ public class EnigmaGUI extends Frame
         jLabel5.setText("Rotating Cipher:");
 
         bDecodeUnknown.setText("Decode unknown.txt");
-        bDecodeUnknown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecodeUnknown.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecodeUnknownActionPerformed(evt);
             }
         });
 
         bExit.setText("Exit");
-        bExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bExit.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bExitActionPerformed(evt);
+            }
+        });
+
+        bSetKey.setText("Set Key");
+        bSetKey.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                bSetKeyActionPerformed(evt);
             }
         });
 
@@ -138,6 +166,11 @@ public class EnigmaGUI extends Frame
                             .addComponent(tfOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlabelOutput))
                         .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(bDecodeUnknown)
+                        .addGap(129, 129, 129)
+                        .addComponent(bExit))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bEncryptCaesar)
@@ -145,10 +178,6 @@ public class EnigmaGUI extends Frame
                             .addComponent(jLabel3))
                         .addGap(122, 122, 122)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(bDecryptSubstitution)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bDecryptRotating))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(bEncryptSubstitution)
@@ -156,12 +185,13 @@ public class EnigmaGUI extends Frame
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
-                                    .addComponent(bEncryptRotating)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(bDecodeUnknown)
-                        .addGap(129, 129, 129)
-                        .addComponent(bExit)))
+                                    .addComponent(bEncryptRotating)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(bSetKey, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bDecryptSubstitution, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bDecryptRotating)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -190,7 +220,9 @@ public class EnigmaGUI extends Frame
                     .addComponent(bDecryptCaesar)
                     .addComponent(bDecryptSubstitution)
                     .addComponent(bDecryptRotating))
-                .addGap(45, 45, 45)
+                .addGap(4, 4, 4)
+                .addComponent(bSetKey)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bExit)
                     .addComponent(bDecodeUnknown))
@@ -206,7 +238,7 @@ public class EnigmaGUI extends Frame
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -265,6 +297,12 @@ public class EnigmaGUI extends Frame
         System.exit(0);
     }//GEN-LAST:event_formWindowClosing
 
+    private void bSetKeyActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bSetKeyActionPerformed
+    {//GEN-HEADEREND:event_bSetKeyActionPerformed
+        SetKeyDialog dialog = new SetKeyDialog(this, true);
+        
+    }//GEN-LAST:event_bSetKeyActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bDecodeUnknown;
@@ -275,6 +313,7 @@ public class EnigmaGUI extends Frame
     private javax.swing.JButton bEncryptRotating;
     private javax.swing.JButton bEncryptSubstitution;
     private javax.swing.JButton bExit;
+    private javax.swing.JButton bSetKey;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
