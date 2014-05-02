@@ -6,19 +6,29 @@ package enigmamachine;
  */
 public class SimpleEnigma
 {
-    String OuterRotor = "#BDFHJLNPRTVXZACEGIKMOQSUWY";
-    String MiddleRotor = "#EJOTYCHMRWAFKPUZDINSXBGLWV";
-    String InnerRotor = "#GNUAHOVBIPWCJQXDKRYELSZFMT";
+    String OuterRotor;
+    String MiddleRotor;
+    String InnerRotor;
     
-    SimpleEnigma()
+    public SimpleEnigma()
     {
-        
+        OuterRotor = "#BDFHJLNPRTVXZACEGIKMOQSUWY";
+        MiddleRotor = "#EJOTYCHMRWAFKPUZDINSXBGLQV";
+        InnerRotor = "#GNUAHOVBIPWCJQXDKRYELSZFMT";
+    }
+    
+    public SimpleEnigma(String OuterRotor, String MiddleRotor, String InnerRotor)
+    {
+        this.OuterRotor = OuterRotor;
+        this.MiddleRotor = MiddleRotor;
+        this.InnerRotor = InnerRotor;
     }
     
     public String encode(String pPlainText)
     {
         String sPlainText = pPlainText.toUpperCase();
         StringBuilder sbEncodedText = new StringBuilder();
+        initializeRings();
         
         //Turn spaces into #
         sPlainText = sPlainText.replace(' ', '#');
@@ -27,7 +37,8 @@ public class SimpleEnigma
         {
             if(Character.isLetter(sPlainText.charAt(i)) || sPlainText.charAt(i) == '#')
             {
-                sbEncodedText.append(c);
+                sbEncodedText.append(OuterRotor.charAt(MiddleRotor.indexOf(OuterRotor.charAt(InnerRotor.indexOf(sPlainText.charAt(i))))));
+//                rotateRings();
             }
             else
             {
@@ -42,12 +53,14 @@ public class SimpleEnigma
     {
         String sEncodedText = pEncodedText.toUpperCase();
         StringBuilder sbPlainText = new StringBuilder();
+        initializeRings();
         
         for(int i = 0; i < sEncodedText.length(); i++)
         {
             if(Character.isLetter(sEncodedText.charAt(i)) || sEncodedText.charAt(i) == '#')
             {
-                sbPlainText.append(c);
+                sbPlainText.append(InnerRotor.charAt(OuterRotor.indexOf(MiddleRotor.charAt(OuterRotor.indexOf(sEncodedText.charAt(i))))));
+//                rotateRings();
             }
             else
             {
@@ -62,9 +75,9 @@ public class SimpleEnigma
     
     void initializeRings()
     {
-        OuterRotor = "#BDFHJLNPRTVXZACEGIKMOQSUWY";
-        MiddleRotor = "#EJOTYCHMRWAFKPUZDINSXBGLWV";
-        InnerRotor = "#GNUAHOVBIPWCJQXDKRYELSZFMT";
+        OuterRotor =  "#BDFHJLNPRTVXZACEGIKMOQSUWY";
+        MiddleRotor = "#EJOTYCHMRWAFKPUZDINSXBGLQV";
+        InnerRotor =  "#GNUAHOVBIPWCJQXDKRYELSZFMT";
     }
     
     void rotateRings()
