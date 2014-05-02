@@ -73,9 +73,11 @@ public class SimpleEnigma
             }
         }
         
-//        sbPlainText.re
+        //Turn # into spaces
+        String sPlainText = sbPlainText.toString();
+        sPlainText = sPlainText.replace('#', ' ');
         
-        return sbPlainText.toString();
+        return sPlainText;
     }
     
     void initializeRings()
@@ -89,31 +91,28 @@ public class SimpleEnigma
     {
         if(InnerRotorCount == 26)
         {
-            
             //rotate InnerRotor
             //Code based on Kyle's rotateKey() code in RotatingCipher.java
-            StringBuilder changeKey = new StringBuilder(rotatedInner);
+            StringBuilder changeKey = new StringBuilder();
             char firstChar = rotatedInner.charAt(0);
             char lastChar = rotatedInner.charAt(26);
-            changeKey.setCharAt(26, firstChar);
+            changeKey.append(lastChar);
             for(int i = 0; i < 26; i++)
             {
-                changeKey.setCharAt((25 - i), rotatedInner.charAt(26 - i));
+                changeKey.append(rotatedInner.charAt(i));
             }
             rotatedInner = changeKey.toString();
             
             //rotate MiddleRotor
-            changeKey = new StringBuilder(rotatedMiddle);
+            changeKey = new StringBuilder();
             firstChar = rotatedMiddle.charAt(0);
             lastChar = rotatedMiddle.charAt(26);
-            changeKey.setCharAt(26, firstChar);
+            changeKey.append(lastChar);
             for(int i = 0; i < 26; i++)
             {
-                changeKey.setCharAt((25 - i), rotatedMiddle.charAt(26 - i));
+                changeKey.append(rotatedMiddle.charAt(i));
             }
             rotatedMiddle = changeKey.toString();
-            
-            
             
             InnerRotorCount = 0;
         }
@@ -121,13 +120,13 @@ public class SimpleEnigma
         {
             //rotate InnerRotor
             //Code based on Kyle's rotateKey() code in RotatingCipher.java
-            StringBuilder changeKey = new StringBuilder(rotatedInner);
+            StringBuilder changeKey = new StringBuilder();
             char firstChar = rotatedInner.charAt(0);
             char lastChar = rotatedInner.charAt(26);
-            changeKey.setCharAt(26 ,firstChar);
+            changeKey.append(lastChar);
             for(int i = 0; i < 26; i++)
             {
-                changeKey.setCharAt((25 - i), rotatedInner.charAt(26 - i));
+                changeKey.append(rotatedInner.charAt(i));
             }
             rotatedInner = changeKey.toString();
             InnerRotorCount++;
@@ -139,10 +138,6 @@ public class SimpleEnigma
         SimpleEnigma enigma = new SimpleEnigma();
         enigma.initializeRings();
         
-//        while(true)
-//        {
-//            enigma.rotateRings();
-//        }
         System.out.println(enigma.decode("OKNNWRDHGERPILRLAMFZF#FMUC"));
     }
 }
