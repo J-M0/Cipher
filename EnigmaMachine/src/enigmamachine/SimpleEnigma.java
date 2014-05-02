@@ -10,6 +10,11 @@ public class SimpleEnigma
     String MiddleRotor;
     String InnerRotor;
     
+    String rotatedMiddle;
+    String rotatedInner;
+    
+    int MiddleRotorCount = 0;
+    
     public SimpleEnigma()
     {
         OuterRotor = "#BDFHJLNPRTVXZACEGIKMOQSUWY";
@@ -59,7 +64,7 @@ public class SimpleEnigma
         {
             if(Character.isLetter(sEncodedText.charAt(i)) || sEncodedText.charAt(i) == '#')
             {
-                sbPlainText.append(InnerRotor.charAt(OuterRotor.indexOf(MiddleRotor.charAt(OuterRotor.indexOf(sEncodedText.charAt(i))))));
+                sbPlainText.append(rotatedInner.charAt(OuterRotor.indexOf(rotatedMiddle.charAt(OuterRotor.indexOf(sEncodedText.charAt(i))))));
 //                rotateRings();
             }
             else
@@ -75,13 +80,23 @@ public class SimpleEnigma
     
     void initializeRings()
     {
-        OuterRotor =  "#BDFHJLNPRTVXZACEGIKMOQSUWY";
-        MiddleRotor = "#EJOTYCHMRWAFKPUZDINSXBGLQV";
-        InnerRotor =  "#GNUAHOVBIPWCJQXDKRYELSZFMT";
+        rotatedMiddle = MiddleRotor;
+        rotatedInner =  InnerRotor;
+        MiddleRotorCount = 0;
     }
     
     void rotateRings()
     {
-        
+        if(MiddleRotorCount == 26)
+        {
+            //rotate MiddleRotor            
+            //rotate InnerRotor
+            MiddleRotorCount = 0;
+        }
+        else
+        {
+            //rotate MiddleRotor
+            MiddleRotorCount++;
+        }
     }
 }
