@@ -1,5 +1,8 @@
 package enigmamachine;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author James Morris
@@ -143,7 +146,17 @@ public class SimpleEnigma
 
     public void setOuterRotor(String OuterRotor)
     {
-        this.OuterRotor = OuterRotor.toUpperCase();
+        if(OuterRotor.length() == 27)
+        {
+            this.OuterRotor = OuterRotor.toUpperCase();
+        }
+        else
+        {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f,
+            "The rotor must be 27 letters long and include #","Error",
+            JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public String getMiddleRotor()
@@ -153,7 +166,17 @@ public class SimpleEnigma
 
     public void setMiddleRotor(String MiddleRotor)
     {
-        this.MiddleRotor = MiddleRotor.toUpperCase();
+        if(MiddleRotor.length() == 27)
+        {
+            this.MiddleRotor = MiddleRotor.toUpperCase();
+        }
+        else
+        {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f,
+            "The rotor must be 27 letters long and include #","Error",
+            JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public String getInnerRotor()
@@ -163,7 +186,17 @@ public class SimpleEnigma
 
     public void setInnerRotor(String InnerRotor)
     {
-        this.InnerRotor = InnerRotor.toUpperCase();
+        if(InnerRotor.length() == 27)
+        {
+            this.InnerRotor = InnerRotor.toUpperCase();
+        }
+        else
+        {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f,
+            "The rotor must be 27 letters long and include #","Error",
+            JOptionPane.ERROR_MESSAGE);
+        }
     }
     
 //    public static void main(String[] args)
