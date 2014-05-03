@@ -136,6 +136,36 @@ public class SimpleEnigma
         }
     }
     
+    public String getOuterRotor()
+    {
+        return OuterRotor;
+    }
+
+    public void setOuterRotor(String OuterRotor)
+    {
+        this.OuterRotor = OuterRotor.toUpperCase();
+    }
+
+    public String getMiddleRotor()
+    {
+        return MiddleRotor;
+    }
+
+    public void setMiddleRotor(String MiddleRotor)
+    {
+        this.MiddleRotor = MiddleRotor.toUpperCase();
+    }
+
+    public String getInnerRotor()
+    {
+        return InnerRotor;
+    }
+
+    public void setInnerRotor(String InnerRotor)
+    {
+        this.InnerRotor = InnerRotor.toUpperCase();
+    }
+    
 //    public static void main(String[] args)
 //    {
 //        SimpleEnigma enigma = new SimpleEnigma();
