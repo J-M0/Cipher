@@ -12,6 +12,7 @@ public class EnigmaMachine
         EnigmaGUI g1 = new EnigmaGUI();
         g1.setVisible(true);
         g1.setLocationRelativeTo(null);
+        g1.setTitle("Enigma Machine Ciphers");
         g1.setSize(560,288);
     }
 }
