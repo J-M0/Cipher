@@ -23,6 +23,7 @@ public class RotatingCipher
             if(Character.isLetter(sEncodeUpMe.charAt(i)))
             {
                 sbEncodedText.append(tempAlphabet.charAt(ALPHABET.indexOf(sEncodeUpMe.charAt(i))));
+                rotateKey(tempAlphabet);
             }
             else
             {
@@ -43,6 +44,7 @@ public class RotatingCipher
             if(Character.isLetter(sEncodedUpText.charAt(i)))
             {
                 sbPlainText.append(ALPHABET.charAt(tempAlphabet.indexOf(sEncodedUpText.charAt(i))));
+                rotateKey(tempAlphabet);
             }
             else
             {
