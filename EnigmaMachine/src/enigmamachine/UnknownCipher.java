@@ -13,7 +13,7 @@ public class UnknownCipher
     FileDialog fd;
     String sFileName; //raw input file name (with full directory)
     String sDecodeFileName;//raw, generated output file name (with full directory)
-    RotatingCipher rotating = new RotatingCipher();//new key to avoid issues with GUI
+    RotatingCipher rotating;//new key to avoid issues with GUI
     
     public UnknownCipher()
     {
@@ -23,7 +23,7 @@ public class UnknownCipher
     public void decrypt() throws IOException
     {
         //creates and opens the file choosing dialog box
-        fd= new FileDialog(fd, "Choose the file", FileDialog.LOAD);
+        fd= new FileDialog(fd, "Choose the file to decode", FileDialog.LOAD);
         fd.setFile("*.txt");//sets required file extension
         fd.setVisible(true);
         
@@ -62,8 +62,10 @@ public class UnknownCipher
             //reads the lines, if there is a line to read (not null)
             while( (sLine = (String) dataIn.readLine()) != null )
             {
+                rotating = new RotatingCipher();
                 //prints the decoded line to the out file
                 dataOut.println(rotating.decode(sLine));
+                rotating=null;
             }
         }
         catch (IOException e)
