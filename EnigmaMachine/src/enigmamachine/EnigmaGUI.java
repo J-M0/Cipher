@@ -52,10 +52,10 @@ public class EnigmaGUI extends Frame
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        bEnigmaEncrypt = new javax.swing.JButton();
+        bEnigmaDecode = new javax.swing.JButton();
+        tfEnigmaInput = new javax.swing.JTextField();
+        tfEnigmaOutput = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -258,9 +258,23 @@ public class EnigmaGUI extends Frame
 
         jTextField3.setText(enigma.getInnerRotor());
 
-        jButton1.setText("Encode");
+        bEnigmaEncrypt.setText("Encrypt Text");
+        bEnigmaEncrypt.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                bEnigmaEncryptActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Decode");
+        bEnigmaDecode.setText("Decode Text");
+        bEnigmaDecode.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                bEnigmaDecodeActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Output");
 
@@ -271,39 +285,39 @@ public class EnigmaGUI extends Frame
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField2)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(102, 102, 102))
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel6))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(jButton1))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel8)
+                                .addComponent(bEnigmaEncrypt))
+                            .addComponent(tfEnigmaInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(jLabel7))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton2)))))
-                .addContainerGap(110, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
+                                .addComponent(bEnigmaDecode))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(tfEnigmaOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -325,15 +339,15 @@ public class EnigmaGUI extends Frame
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfEnigmaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfEnigmaOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(bEnigmaEncrypt)
+                    .addComponent(bEnigmaDecode))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab2", jPanel3);
@@ -420,6 +434,18 @@ public class EnigmaGUI extends Frame
         
     }//GEN-LAST:event_bSetKeyActionPerformed
 
+    private void bEnigmaEncryptActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bEnigmaEncryptActionPerformed
+    {//GEN-HEADEREND:event_bEnigmaEncryptActionPerformed
+       String encodedText = enigma.encode(tfEnigmaInput.getText());
+       tfEnigmaOutput.setText(encodedText);
+    }//GEN-LAST:event_bEnigmaEncryptActionPerformed
+
+    private void bEnigmaDecodeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bEnigmaDecodeActionPerformed
+    {//GEN-HEADEREND:event_bEnigmaDecodeActionPerformed
+        String decodedText = enigma.decode(tfEnigmaInput.getText());
+        tfEnigmaOutput.setText(decodedText);
+    }//GEN-LAST:event_bEnigmaDecodeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bDecodeUnknown;
@@ -429,10 +455,10 @@ public class EnigmaGUI extends Frame
     private javax.swing.JButton bEncryptCaesar;
     private javax.swing.JButton bEncryptRotating;
     private javax.swing.JButton bEncryptSubstitution;
+    private javax.swing.JButton bEnigmaDecode;
+    private javax.swing.JButton bEnigmaEncrypt;
     private javax.swing.JButton bExit;
     private javax.swing.JButton bSetKey;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -447,10 +473,10 @@ public class EnigmaGUI extends Frame
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel jlabelEnterText;
     private javax.swing.JLabel jlabelOutput;
+    private javax.swing.JTextField tfEnigmaInput;
+    private javax.swing.JTextField tfEnigmaOutput;
     private javax.swing.JTextField tfInput;
     private javax.swing.JTextField tfOutput;
     // End of variables declaration//GEN-END:variables
