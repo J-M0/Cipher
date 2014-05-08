@@ -24,7 +24,8 @@ public class EnigmaGUI extends Frame
 
     //code that creates the GUI
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -45,12 +46,12 @@ public class EnigmaGUI extends Frame
         bExit = new javax.swing.JButton();
         bSetKey = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        tfOuterRotor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        tfMiddleRotor = new javax.swing.JTextField();
+        tfInnerRotor = new javax.swing.JTextField();
         bEnigmaEncrypt = new javax.swing.JButton();
         bEnigmaDecode = new javax.swing.JButton();
         tfEnigmaInput = new javax.swing.JTextField();
@@ -62,8 +63,10 @@ public class EnigmaGUI extends Frame
         setFont(new java.awt.Font("Lucida Console", 0, 12)); // NOI18N
         setName("Enigma Machine"); // NOI18N
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
+        addWindowListener(new java.awt.event.WindowAdapter()
+        {
+            public void windowClosing(java.awt.event.WindowEvent evt)
+            {
                 formWindowClosing(evt);
             }
         });
@@ -76,8 +79,10 @@ public class EnigmaGUI extends Frame
         jlabelOutput.setText("Output:");
 
         bEncryptCaesar.setText("Encrypt Text");
-        bEncryptCaesar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEncryptCaesar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEncryptCaesarActionPerformed(evt);
             }
         });
@@ -85,22 +90,28 @@ public class EnigmaGUI extends Frame
         jLabel3.setText("Caesar's Cipher:");
 
         bDecryptCaesar.setText("Decrypt Text");
-        bDecryptCaesar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecryptCaesar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecryptCaesarActionPerformed(evt);
             }
         });
 
         bEncryptSubstitution.setText("Encrypt Text");
-        bEncryptSubstitution.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEncryptSubstitution.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEncryptSubstitutionActionPerformed(evt);
             }
         });
 
         bDecryptSubstitution.setText("Decrypt Text");
-        bDecryptSubstitution.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecryptSubstitution.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecryptSubstitutionActionPerformed(evt);
             }
         });
@@ -108,15 +119,19 @@ public class EnigmaGUI extends Frame
         jLabel4.setText("Substitution Cipher:");
 
         bEncryptRotating.setText("Encrypt Text");
-        bEncryptRotating.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEncryptRotating.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEncryptRotatingActionPerformed(evt);
             }
         });
 
         bDecryptRotating.setText("Decrypt Text");
-        bDecryptRotating.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecryptRotating.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecryptRotatingActionPerformed(evt);
             }
         });
@@ -124,22 +139,28 @@ public class EnigmaGUI extends Frame
         jLabel5.setText("Rotating Cipher:");
 
         bDecodeUnknown.setText("Decode unknown.txt");
-        bDecodeUnknown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bDecodeUnknown.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bDecodeUnknownActionPerformed(evt);
             }
         });
 
         bExit.setText("Exit");
-        bExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bExit.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bExitActionPerformed(evt);
             }
         });
 
         bSetKey.setText("Set Key");
-        bSetKey.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bSetKey.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bSetKeyActionPerformed(evt);
             }
         });
@@ -225,7 +246,7 @@ public class EnigmaGUI extends Frame
 
         jTabbedPane1.addTab("Substitution Ciphers", jPanel1);
 
-        jTextField1.setText(enigma.getOuterRotor());
+        tfOuterRotor.setText(enigma.getOuterRotor());
 
         jLabel1.setText("Outer Rotor");
 
@@ -233,20 +254,24 @@ public class EnigmaGUI extends Frame
 
         jLabel6.setText("Inner Rotor");
 
-        jTextField2.setText(enigma.getMiddleRotor());
+        tfMiddleRotor.setText(enigma.getMiddleRotor());
 
-        jTextField3.setText(enigma.getInnerRotor());
+        tfInnerRotor.setText(enigma.getInnerRotor());
 
         bEnigmaEncrypt.setText("Encrypt Text");
-        bEnigmaEncrypt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEnigmaEncrypt.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEnigmaEncryptActionPerformed(evt);
             }
         });
 
         bEnigmaDecode.setText("Decode Text");
-        bEnigmaDecode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        bEnigmaDecode.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 bEnigmaDecodeActionPerformed(evt);
             }
         });
@@ -266,10 +291,10 @@ public class EnigmaGUI extends Frame
                     .addComponent(jLabel2))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField2)
+                    .addComponent(tfInnerRotor)
+                    .addComponent(tfMiddleRotor)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfOuterRotor, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(102, 102, 102))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -301,15 +326,15 @@ public class EnigmaGUI extends Frame
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfOuterRotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfMiddleRotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfInnerRotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -411,12 +436,20 @@ public class EnigmaGUI extends Frame
 
     private void bEnigmaEncryptActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bEnigmaEncryptActionPerformed
     {//GEN-HEADEREND:event_bEnigmaEncryptActionPerformed
+       enigma.setOuterRotor(tfOuterRotor.getText());
+       enigma.setMiddleRotor(tfMiddleRotor.getText());
+       enigma.setInnerRotor(tfInnerRotor.getText());
+        
        String encodedText = enigma.encode(tfEnigmaInput.getText());
        tfEnigmaOutput.setText(encodedText);
     }//GEN-LAST:event_bEnigmaEncryptActionPerformed
 
     private void bEnigmaDecodeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_bEnigmaDecodeActionPerformed
     {//GEN-HEADEREND:event_bEnigmaDecodeActionPerformed
+       enigma.setOuterRotor(tfOuterRotor.getText());
+       enigma.setMiddleRotor(tfMiddleRotor.getText());
+       enigma.setInnerRotor(tfInnerRotor.getText());
+        
         String decodedText = enigma.decode(tfEnigmaInput.getText());
         tfEnigmaOutput.setText(decodedText);
     }//GEN-LAST:event_bEnigmaDecodeActionPerformed
@@ -445,14 +478,14 @@ public class EnigmaGUI extends Frame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel jlabelEnterText;
     private javax.swing.JLabel jlabelOutput;
     private javax.swing.JTextField tfEnigmaInput;
     private javax.swing.JTextField tfEnigmaOutput;
+    private javax.swing.JTextField tfInnerRotor;
     private javax.swing.JTextField tfInput;
+    private javax.swing.JTextField tfMiddleRotor;
+    private javax.swing.JTextField tfOuterRotor;
     private javax.swing.JTextField tfOutput;
     // End of variables declaration//GEN-END:variables
 }
